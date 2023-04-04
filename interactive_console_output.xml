@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20230329 18:32:29.095" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\Peter\.vscode\extensions\robocorp.robotframework-lsp-1.9.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Open the robot order Website">
+<msg timestamp="20230329 18:32:32.035" level="FAIL">No keyword with name 'Open the robot order Website' found.</msg>
+<status status="FAIL" starttime="20230329 18:32:32.034" endtime="20230329 18:32:32.035"/>
+</kw>
+<kw name="Get Orders">
+<var>@{Orders}</var>
+<status status="NOT RUN" starttime="20230329 18:32:32.043" endtime="20230329 18:32:32.044"/>
+</kw>
+<kw name="Log Orders">
+<arg>@{Orders}</arg>
+<status status="NOT RUN" starttime="20230329 18:32:32.049" endtime="20230329 18:32:32.049"/>
+</kw>
+<kw name="Close the annoying modal">
+<status status="NOT RUN" starttime="20230329 18:32:32.060" endtime="20230329 18:32:32.060"/>
+</kw>
+<kw name="Fill the Forms">
+<arg>@{Orders}</arg>
+<status status="NOT RUN" starttime="20230329 18:32:32.066" endtime="20230329 18:32:32.066"/>
+</kw>
+<kw name="Create ZIP package from PDF files">
+<status status="NOT RUN" starttime="20230329 18:32:32.073" endtime="20230329 18:32:32.074"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Done.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230329 18:32:32.075" endtime="20230329 18:32:32.075"/>
+</kw>
+<status status="PASS" starttime="20230329 18:32:29.512" endtime="20230329 18:33:38.117"/>
+</kw>
+<status status="PASS" starttime="20230329 18:32:29.509" endtime="20230329 18:33:38.117"/>
+</test>
+<status status="PASS" starttime="20230329 18:32:29.104" endtime="20230329 18:33:38.120"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
