@@ -12,6 +12,7 @@ Library           RPA.PDF
 Library           RPA.Email.Exchange
 Library           RPA.Archive
 Library           RPA.RobotLogListener
+Library           RPA.Assistant
 
 *** Variables ***
 
@@ -37,8 +38,24 @@ ${RECIEPTS_PATH}           ${OUTPUT DIR}${/}reciepts${/}
 ${pdf}
 ${receipt_table}              
 *** Keywords ***
+
+User Input Task
+    [Documentation]
+    ...    Using user input
+    ...    https://robotsparebinindustries.com/#/robot-order
+    #Clear Dialog
+    Add Heading    Input from User
+    Add Text Input     text_input    Please enter URL
+    Add submit buttons    buttons=Submit,Cancel    default=Submit
+    ${result}=    Run dialog
+
+    ${url}=    Set Variable    ${result}[text_input]
+    Log To Console    ${url}
+    Open the robot order Website    ${url}    
 Open the robot order Website
-    Open Available Browser        ${RoboStartURL}
+    [Arguments]    ${myURL}
+    # Open Available Browser        ${RoboStartURL}
+    Open Available Browser        ${myURL}
    
 Get Orders
     Download        ${OrderFilesURL}     overwrite=${True}    target_file=${DOWNLOAD_PATH} 
@@ -108,8 +125,9 @@ Create ZIP package from PDF files
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
-    Mute Run On Failure
-    Open the robot order Website
+    Mute Run On Failure       :Fill the Form
+    # Open the robot order Website
+    User Input Task
     @{Orders}=     Get Orders
     Log Orders       @{Orders}
     Close the annoying modal
